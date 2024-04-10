@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'echo checkout'
+        sh 'echo checkout;cd /var/lib/jenkins/workspace/Three-Tier-Backend-Application; rm -rf *;'
         git branch: 'main', url: 'https://github.com/iam-pasupart/Jenkins-Zero-To-Hero.git'
       }
     }
