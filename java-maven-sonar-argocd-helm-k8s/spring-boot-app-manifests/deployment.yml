@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: mochap/ultimate-cicd:10
+        image: mochap/ultimate-cicd:replaceImageTag
         ports:
         - containerPort: 3000
