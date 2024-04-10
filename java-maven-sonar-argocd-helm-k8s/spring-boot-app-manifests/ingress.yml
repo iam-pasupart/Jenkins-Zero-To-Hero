@@ -9,6 +9,8 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
 spec:
   ingressClassName: alb
+  matchLabels:
+      app: spring-boot-app
   rules:
     - http:
         paths:
