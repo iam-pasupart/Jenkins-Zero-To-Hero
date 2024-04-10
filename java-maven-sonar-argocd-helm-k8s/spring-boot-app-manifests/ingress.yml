@@ -6,8 +6,11 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
 spec:
   ingressClassName: alb
+  selector:
+    app: spring-boot-app
   rules:
     - http:
         paths:
@@ -15,6 +18,6 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: service-2048
+              name: spring-boot-app-service
               port:
-                number: 80
+                number: 3000
